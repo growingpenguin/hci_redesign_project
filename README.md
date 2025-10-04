@@ -1,6 +1,10 @@
 # hci_redesign_project
 These are files for the hci mid assignment
 
+## Demo Video
+📹 **[HCI_Redesign_Demo.mov](HCI_Redesign_Demo.mov)** — opens the screen-recorded demo implementing the design.  
+If GitHub doesn’t preview `.mov`, click **Download** to view locally.
+
 ### index.html
 - **Purpose:** Markup for the Editor ↔ Preview prototype with four screens (tabs): Default, Hover (Add Detail), Hover (Replace Concise), Hover (Tighten).
 - **Key UI hooks:**
@@ -37,6 +41,4 @@ Use VS Code **Live Server** (or any static server):
 1. Open this folder in VS Code → install *Live Server* → open `index.html` → **Open with Live Server**.
 2. Save files to auto-reload.
 
-## Demo Video
-📹 **[HCI_Redesign_Demo.mov](HCI_Redesign_Demo.mov)** — opens the screen-recorded demo implementing the design.  
-If GitHub doesn’t preview `.mov`, click **Download** to view locally.
+
