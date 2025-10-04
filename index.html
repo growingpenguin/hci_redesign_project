@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editor ↔ Preview — Subtitle Suggestion UI (Prototype · v3)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="top">
+  <h1>MacBook Pro 14&quot; — Prototype</h1>
+  <nav class="tabs" role="tablist" aria-label="Screens">
+    <button class="tab active" data-screen="s1" role="tab" aria-selected="true">1 · Default</button>
+    <button class="tab" data-screen="s2" role="tab" aria-selected="false">2 · Hover (Add detail)</button>
+    <button class="tab" data-screen="s3" role="tab" aria-selected="false">3 · Hover (Replace concise)</button>
+    <button class="tab" data-screen="s4" role="tab" aria-selected="false">4 · Hover (Tighten)</button>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- Screen 1 -->
+  <section id="s1" class="screen active" aria-label="Default">
+    <div class="columns">
+      <div class="panel">
+        <h2>Editor (Left)</h2>
+        <article class="card has-hoverbox">
+          <h3 class="title"><span class="emoji">🍓</span>Python Classes<br/>Explained with a<br/>Backpack — And Why<br/>They Power Real Data Structures</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Accessories on a white desk">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+          <div class="counter">⚠️ Will truncate at 2 lines on 375px — Counter: 176 / 220</div>
+
+          <div class="actions">
+
+            <div class="action">
+              <button class="btn" data-goto="s2" aria-describedby="hb1">➕ Add detail</button>
+              <div class="hoverbox" id="hb1" role="tooltip" aria-hidden="true">
+                <div class="arrow"></div>
+                <h4>➕ Add Detail</h4>
+                <p>This will add more context to your title.</p>
+                <div class="row">
+                  <button class="chip apply" data-goto="s2">Apply ▾</button>
+                  <button class="chip dismiss" data-goto="s1">Dismiss ▾</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="action">
+              <button class="btn" data-goto="s3" aria-describedby="hb2">✂️ Replace concise</button>
+              <div class="hoverbox" id="hb2" role="tooltip" aria-hidden="true">
+                <div class="arrow"></div>
+                <h4>✂️ Replace concise</h4>
+                <p>This will shorten your title with a concise version.</p>
+                <div class="row">
+                  <button class="chip apply" data-goto="s3">Apply ▾</button>
+                  <button class="chip dismiss" data-goto="s1">Dismiss ▾</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="action">
+              <button class="btn" data-goto="s4" aria-describedby="hb3">🪛 Tighten wording</button>
+              <div class="hoverbox" id="hb3" role="tooltip" aria-hidden="true">
+                <div class="arrow"></div>
+                <h4>🪛 Tighten wording</h4>
+                <p>This will refine the wording for clarity.</p>
+                <div class="row">
+                  <button class="chip apply" data-goto="s4">Apply ▾</button>
+                  <button class="chip dismiss" data-goto="s1">Dismiss ▾</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="badge">Strongly Recommended</div>
+        </article>
+      </div>
+
+      <div class="panel">
+        <h2>Preview (Right)</h2>
+        <article class="card">
+          <h3 class="title truncate"><span class="emoji">🍓</span>Python Classes Explained with a Backpack — And Why They Power Real Data S…</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Accessories on a white desk, banner">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 2 -->
+  <section id="s2" class="screen" aria-label="Hover Add Detail">
+    <div class="columns">
+      <div class="panel">
+        <h2>Editor with the ghostly hover (Left)</h2>
+        <article class="card ghost-on-hover has-hoverbox">
+          <div class="ghost"></div>
+          <h3 class="title"><span class="emoji">🍓</span>Python Classes,<br/>Explained with a,<br/>Backpack — And Why,<br/>They Power Real Data Structures</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Accessories on a white desk">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+
+          <div class="actions">
+            <div class="action is-open">
+              <button class="btn" data-goto="s2" aria-describedby="hb2a">➕ Add detail</button>
+              <div class="hoverbox" id="hb2a" role="tooltip">
+                <div class="arrow"></div>
+                <h4>➕ Add Detail</h4>
+                <p>This will add more context to your title.</p>
+                <div class="row">
+                  <button class="chip apply" data-goto="s2">Apply ▾</button>
+                  <button class="chip dismiss" data-goto="s1">Dismiss ▾</button>
+                </div>
+              </div>
+            </div>
+            <div class="action">
+              <button class="btn" data-goto="s3">✂️ Replace concise</button>
+            </div>
+            <div class="action">
+              <button class="btn" data-goto="s4">🪛 Tighten wording</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="panel">
+        <h2>Preview (Right)</h2>
+        <article class="card">
+          <h3 class="title"><span class="emoji">🍓</span>Python Classes Explained with a Backpack —<br/>And Why They Power Real Data Structures<br/>(Beginner Guide)</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Banner wide">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 3 -->
+  <section id="s3" class="screen" aria-label="Hover Replace concise">
+    <div class="columns">
+      <div class="panel">
+        <h2>Editor with the ghostly hover (Left)</h2>
+        <article class="card ghost-on-hover has-hoverbox">
+          <div class="ghost"></div>
+          <h3 class="title"><span class="emoji">🍓</span>Python Classes<br/>Explained with a<br/>Backpack — And Why<br/>They Power Real Data Structures</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Accessories">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+
+          <div class="actions">
+            <div class="action">
+              <button class="btn" data-goto="s2">➕ Add detail</button>
+            </div>
+            <div class="action is-open">
+              <button class="btn" data-goto="s3" aria-describedby="hb3a">✂️ Replace concise</button>
+              <div class="hoverbox" id="hb3a" role="tooltip">
+                <div class="arrow"></div>
+                <h4>✂️ Replace concise</h4>
+                <p>This will shorten your title with a concise version.</p>
+                <div class="row">
+                  <button class="chip apply" data-goto="s3">Apply ▾</button>
+                  <button class="chip dismiss" data-goto="s1">Dismiss ▾</button>
+                </div>
+              </div>
+            </div>
+            <div class="action">
+              <button class="btn" data-goto="s4">🪛 Tighten wording</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="panel">
+        <h2>Preview (Right)</h2>
+        <article class="card">
+          <h3 class="title"><span class="emoji">🍓</span>Intro to Python Classes —<br/>Backpack Analogy for Data Structures</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Banner wide">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 4 -->
+  <section id="s4" class="screen" aria-label="Hover Tighten">
+    <div class="columns">
+      <div class="panel">
+        <h2>Editor with the ghostly hover (Left)</h2>
+        <article class="card ghost-on-hover has-hoverbox">
+          <div class="ghost"></div>
+          <h3 class="title"><span class="emoji">🍓</span>Python Classes<br/>Explained with a<br/>Backpack — And Why<br/>They Power Real Data Structures</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Accessories">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+
+          <div class="actions">
+            <div class="action">
+              <button class="btn" data-goto="s2">➕ Add detail</button>
+            </div>
+            <div class="action">
+              <button class="btn" data-goto="s3">✂️ Replace concise</button>
+            </div>
+            <div class="action is-open">
+              <button class="btn" data-goto="s4" aria-describedby="hb4a">🪛 Tighten wording</button>
+              <div class="hoverbox" id="hb4a" role="tooltip">
+                <div class="arrow"></div>
+                <h4>🪛 Tighten wording</h4>
+                <p>This will refine the wording for clarity.</p>
+                <div class="row">
+                  <button class="chip apply" data-goto="s4">Apply ▾</button>
+                  <button class="chip dismiss" data-goto="s1">Dismiss ▾</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="panel">
+        <h2>Preview (Right)</h2>
+        <article class="card">
+          <h3 class="title"><span class="emoji">🍓</span>Python Classes Explained —<br/>Why They Matter for Data Structures</h3>
+          <figure class="imgwrap">
+            <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1200&auto=format&fit=crop" alt="Banner wide">
+          </figure>
+          <div class="meta"><span class="pill">⭐ Aug 1</span><span class="pill">👁️ 16</span></div>
+          <p class="caption">Photo by <a href="#" target="_blank" rel="noreferrer noopener">Tamara Bellis</a> on Unsplash</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="app.js" defer></script>
+</body>
+</html>
