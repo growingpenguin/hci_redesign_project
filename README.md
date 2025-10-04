@@ -1,5 +1,5 @@
 # Redesign Project — AI-Powered Subtitle Optimization
-**Author:** Gyeongbin Ryoo
+**Gyeongbin Ryoo** <br/>
 
 ## Executive Summary
 This project rethinks Medium’s subtitle workflow on mobile. <br/>
@@ -8,6 +8,13 @@ The core problem: **subtitles render inconsistently across the editor/preview an
 ## Demo Video
 📹 **[HCI_Redesign_Demo.mov](HCI_Redesign_Demo.mov)** — opens the screen-recorded demo implementing the design.  
 If GitHub doesn’t preview `.mov`, click **Download** to view locally.
+
+## Try It
+- Open this folder in VS Code and run **Live Server** on `index.html`  
+  (Right-click → *Open with Live Server*) to explore the interactions.
+
+**Figma demo:** https://www.figma.com/design/00fEInYY0d3geOVDO5EZn2/Medium?node-id=0-1&t=6dS9KJIX3XaZiv9c-1  
+**GitHub repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git
 
 ## What I Did (End-to-End Contribution)
 **Problem discovery & evidence**
@@ -82,12 +89,7 @@ If GitHub doesn’t preview `.mov`, click **Download** to view locally.
 **How it connects to this repo:**  
 This PDF summarizes the Medium-subtitle redesign delivered here—live, pixel-accurate preview + AI “Suggest & Explain” (Tighten, Concise, Detail)—and points to the runnable prototype and demo assets
 
-## Try It
-- Open this folder in VS Code and run **Live Server** on `index.html`  
-  (Right-click → *Open with Live Server*) to explore the interactions.
 
-**Figma demo:** https://www.figma.com/design/00fEInYY0d3geOVDO5EZn2/Medium?node-id=0-1&t=6dS9KJIX3XaZiv9c-1  
-**GitHub repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git
 
 
 
