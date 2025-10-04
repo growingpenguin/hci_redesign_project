@@ -6,7 +6,7 @@ These are files for the hci mid assignment
 If GitHub doesn’t preview `.mov`, click **Download** to view locally.
 
 ## Project Structure
-### index.html
+**index.html** <br/>
 - **Purpose:** Markup for the Editor ↔ Preview prototype with four screens (tabs): Default, Hover (Add Detail), Hover (Replace Concise), Hover (Tighten).
 - **Key UI hooks:**
   - **Tabs:** `<button class="tab" data-screen="sX">…</button>` map to `<section id="sX" class="screen">`.
@@ -17,7 +17,7 @@ If GitHub doesn’t preview `.mov`, click **Download** to view locally.
   - Change the demo text in `.title`, swap the `<img src="…">` URLs, or add more actions by duplicating an `.action` block.
   - Add a new screen by copying a `<section id="sX" class="screen">` and a matching tab button with the same `data-screen`.
 
-### styles.css
+**styles.css** <br/>
 - **Purpose:** Theme tokens + layout + component styles.
 - **Highlights:**
   - **Design tokens:** colors, radius, shadow under `:root`.
@@ -27,7 +27,7 @@ If GitHub doesn’t preview `.mov`, click **Download** to view locally.
   - **Ghost overlay:** `.ghost` appears only on hover for the “hover” screens.
 - **What to edit:** tweak spacing, colors, or animation timings (see `.hoverbox` transitions, `.ghost` opacity).
 
-### app.js
+**app.js** <br/>
 - **Purpose:** Wire up tab navigation and hoverbox behavior (including touch support).
 - **Core functions:**
   - `gotoScreen(id)`: activates the `#id` screen and its matching tab; scrolls to top for clarity.
