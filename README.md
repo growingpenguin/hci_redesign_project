@@ -1,5 +1,10 @@
-# hci_redesign_project
-These are files for the hci mid assignment
+# Redesign Project — AI-Powered Subtitle Optimization
+**Author:** Gyeongbin Ryoo
+
+## Executive Summary
+This project rethinks Medium’s subtitle workflow on mobile. <br/>
+The core problem: **subtitles render inconsistently across the editor/preview and the published feed**, so writers can’t trust what they see while composing. The redesign delivers a **pixel-accurate live preview** and an **AI Suggest-and-Explain system** that generates and ranks better subtitle options—**Tighten, Concise, Detail**—so authors can resolve truncation and clarity issues *before* publishing. <br/>
+
 
 ## Demo Video
 📹 **[HCI_Redesign_Demo.mov](HCI_Redesign_Demo.mov)** — opens the screen-recorded demo implementing the design.  
