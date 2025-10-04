@@ -5,6 +5,7 @@ These are files for the hci mid assignment
 📹 **[HCI_Redesign_Demo.mov](HCI_Redesign_Demo.mov)** — opens the screen-recorded demo implementing the design.  
 If GitHub doesn’t preview `.mov`, click **Download** to view locally.
 
+## Project Structure
 ### index.html
 - **Purpose:** Markup for the Editor ↔ Preview prototype with four screens (tabs): Default, Hover (Add Detail), Hover (Replace Concise), Hover (Tighten).
 - **Key UI hooks:**
