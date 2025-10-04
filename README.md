@@ -64,15 +64,6 @@ If GitHub doesn’t preview `.mov`, click **Download** to view locally.
   View Source: https://gist.github.com/growingpenguin/a914ebae4e8e649e1aa8a248367a110e
 
 ---
-
-## Try It
-- Open this folder in VS Code and run **Live Server** on `index.html`  
-  (Right-click → *Open with Live Server*) to explore the interactions.
-
-**Figma demo:** https://www.figma.com/design/00fEInYY0d3geOVDO5EZn2/Medium?node-id=0-1&t=6dS9KJIX3XaZiv9c-1  
-**GitHub repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git
-
-
 ### Gyeongbin_Ryoo_Redesign_Project_Final.pdf
 
 **What this is:** The final write-up for an individual HCI redesign project. It diagnoses a real usability flaw, motivates why it matters with evidence, and presents a minimal, working redesign.
@@ -89,16 +80,16 @@ If GitHub doesn’t preview `.mov`, click **Download** to view locally.
 - **Working prototype link:** preferred public link to an interactive demo; fallback video if needed.
 
 **How it connects to this repo:**  
-This PDF summarizes the Medium-subtitle redesign delivered here—live, pixel-accurate preview + AI “Suggest & Explain” (Tighten, Concise, Detail)—and points to the runnable prototype and demo assets:
-- **Figma Demo:** https://www.figma.com/design/00fEInYY0d3geOVDO5EZn2/Medium?node-id=0-1&t=6dS9KJIX3XaZiv9c-1  
-- **Repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git  
-- **Demo Video:** `HCI_Redesign_Demo.mov`
+This PDF summarizes the Medium-subtitle redesign delivered here—live, pixel-accurate preview + AI “Suggest & Explain” (Tighten, Concise, Detail)—and points to the runnable prototype and demo assets
 
-**Grading rubric (for reference):**
-- Identified Design Flaw or Opportunity — **20%**  
-- Evidence / Analysis — **20%**  
-- Proposed Intervention — **20%**  
-- Working Implementation — **40%**  
+## Try It
+- Open this folder in VS Code and run **Live Server** on `index.html`  
+  (Right-click → *Open with Live Server*) to explore the interactions.
+
+**Figma demo:** https://www.figma.com/design/00fEInYY0d3geOVDO5EZn2/Medium?node-id=0-1&t=6dS9KJIX3XaZiv9c-1  
+**GitHub repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git
+
+
 
 
 
