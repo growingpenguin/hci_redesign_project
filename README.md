@@ -10,41 +10,75 @@ The core problem: **subtitles render inconsistently across the editor/preview an
 📹 **[HCI_Redesign_Demo.mov](HCI_Redesign_Demo.mov)** — opens the screen-recorded demo implementing the design.  
 If GitHub doesn’t preview `.mov`, click **Download** to view locally.
 
-## Project Structure
-**index.html** <br/>
-- **Purpose:** Markup for the Editor ↔ Preview prototype with four screens (tabs): Default, Hover (Add Detail), Hover (Replace Concise), Hover (Tighten).
-- **Key UI hooks:**
-  - **Tabs:** `<button class="tab" data-screen="sX">…</button>` map to `<section id="sX" class="screen">`.
-  - **Action buttons:** `<button class="btn" data-goto="sX">…</button>` jump to the corresponding screen (handled in `app.js`).
-  - **Hoverboxes (true tooltips):** `.action > .hoverbox` positioned above each button with an arrow; shown on hover/focus (desktop) and tap (mobile) via CSS/JS.
-  - **Accessibility:** Uses `role="tablist"`, `role="tab"`, `aria-selected`, and `role="tooltip"` for hoverboxes; buttons reference tooltips via `aria-describedby`.
-- **What to edit:**
-  - Change the demo text in `.title`, swap the `<img src="…">` URLs, or add more actions by duplicating an `.action` block.
-  - Add a new screen by copying a `<section id="sX" class="screen">` and a matching tab button with the same `data-screen`.
+---
 
-**styles.css** <br/>
-- **Purpose:** Theme tokens + layout + component styles.
-- **Highlights:**
-  - **Design tokens:** colors, radius, shadow under `:root`.
-  - **Layout:** two-column grid (`.columns`) with responsive fallback to single column at ≤900px.
-  - **Card & preview:** `.card`, `.truncate` for title overflow, `.badge` for “Strongly Recommended”.
-  - **Hoverbox:** `.action:hover .hoverbox, .action:focus-within .hoverbox, .action.is-open .hoverbox` controls reveal; subtle slide/fade via `opacity` + `transform`.
-  - **Ghost overlay:** `.ghost` appears only on hover for the “hover” screens.
-- **What to edit:** tweak spacing, colors, or animation timings (see `.hoverbox` transitions, `.ghost` opacity).
+## What I Did (End-to-End Contribution)
+**Problem discovery & evidence**
+- Documented a repeatable **usability flaw** with screenshots (Preview shows full subtitle; Published view truncates to “…Data S…”).
+- Mapped issues to **Nielsen heuristics** (Visibility of System Status, Consistency & Standards, Error Prevention, Recognition over Recall).
 
-**app.js** <br/>
-- **Purpose:** Wire up tab navigation and hoverbox behavior (including touch support).
-- **Core functions:**
-  - `gotoScreen(id)`: activates the `#id` screen and its matching tab; scrolls to top for clarity.
-  - **Event delegation:** Any element with `data-goto="sX"` triggers `gotoScreen('sX')` (for action buttons and chips).
-  - **Touch fallback:** On devices with no hover, tapping a button toggles the parent `.action.is-open`; tapping outside closes all open hoverboxes.
-- **What to edit:** Add custom routing or analytics inside `gotoScreen`, or change touch behavior thresholds.
+**Research & framing**
+- Drew **visualization critiques** (Few, Spielman) as analogies to show how inconsistent representations force users to compare “apples and oranges,” increasing cognitive load.
+- Synthesized **cognitive & rhetorical** literature (e.g., Franconeri et al., 2021) to justify surfacing true constraints inline and reducing working-memory demands.
+
+**Interaction design**
+- Designed a **side-by-side, real-time live preview** that reflects the *actual* published constraints.
+- Added a **subtitle pixel budget meter** (fit/overflow states, color-coded warnings).
+- Created **explainable suggestion chips** with tooltips and **Apply / Dismiss** affordances.
+
+**System design & implementation**
+- Implemented a **mobile-first text-fit simulation** (targeting 240 px width × 2 lines) using Pillow to measure pixel width.
+- Built **three candidate strategies**:
+  - `gen_tighten_variants` — remove parentheticals/punctuation/tail words  
+  - `gen_replace_concise_variants` — hard caps + stop-word drop  
+  - `gen_add_detail_variants` — append context tags extracted via TF-IDF n-grams
+- Engineered **multi-factor scoring** in `score_candidate`:
+  - `0.5 * layout_fit + 0.3 * keyword_coverage + 0.2 * semantic_similarity`
+- Added **strength badges** (`is_strong`) gated by fit margin ≥ 20 px, coverage ≥ 0.66, similarity ≥ 0.50.
+- Shipped a **working web prototype** (`index.html`, `styles.css`, `app.js`) with tabs, hover tooltips, and keyboard/touch support.
+
+**Validation**
+- Ran a **prototype test** with a real subtitle; logged generated variants, margins, and fit states; verified the UI communicates the same constraints as the algorithm.
 
 ---
 
-## Run Locally
-Use VS Code **Live Server** (or any static server):
-1. Open this folder in VS Code → install *Live Server* → open `index.html` → **Open with Live Server**.
-2. Save files to auto-reload.
+## Why This Matters
+- **Fixes trust in WYSIWYG:** What you see while editing matches what ships in feed.
+- **Prevents errors early:** Inline warnings and a pixel budget surface “will truncate” before publish.
+- **Reduces cognitive load:** No more mode-switching or memorizing invisible rules; suggestions are explainable and one-click.
+
+---
+
+## Core Technical Notes
+- **Fit model:** `fit_delta_px` measures wrapped text width and returns overflow (>0) or spare margin (<0); `fit_norm = min(1, margin/24)` when it fits.
+- **Coverage & similarity:** `keyword_coverage` vs. `top_keywords(current_text)`; `tfidf_similarity` via scikit-learn.
+- **Ranking:** `rank_candidates` sorts by **score → margin_px → shorter text**.
+- **Badges & decision:** `decide_action_badges` builds `{strategy: top_is_strong}` and selects a global best by **strength → score → margin**.
+
+---
+
+## What’s in This Repo
+- **/ (web demo)**  
+  - `index.html` — Editor/Preview UI with four screens; buttons (`data-goto`) navigate tabs.  
+  - `styles.css` — Theme tokens, layout, hover tooltips, badge styles, responsive grid.  
+  - `app.js` — Tab routing, hover/touch behavior, accessible focus handling.  
+- **HCI_Redesign_Demo.mov** — Screen-recorded walkthrough of the implemented design.
+- **Python algorithm (source linked)** — End-to-end generation/scoring/badging implementation.  
+  View Source: https://gist.github.com/growingpenguin/a914ebae4e8e649e1aa8a248367a110e
+
+---
+
+## Try It
+- Open this folder in VS Code and run **Live Server** on `index.html`  
+  (Right-click → *Open with Live Server*) to explore the interactions.
+
+**Figma demo:** https://www.figma.com/design/00fEInYY0d3geOVDO5EZn2/Medium?node-id=0-1&t=6dS9KJIX3XaZiv9c-1  
+**GitHub repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git
+
+
+
+
+
+
 
 
