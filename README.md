@@ -73,6 +73,32 @@ If GitHub doesn’t preview `.mov`, click **Download** to view locally.
 **GitHub repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git
 
 
+### Gyeongbin_Ryoo_Redesign_Project_Final.pdf
+
+**What this is:** The final write-up for an individual HCI redesign project. It diagnoses a real usability flaw, motivates why it matters with evidence, and presents a minimal, working redesign.
+
+**Scope & goals (per brief):**
+- Identify a concrete usability problem and why it’s frustrating or broken.
+- Implement a focused, working redesign (not just aesthetics), tied to user needs and evidence.
+- Keep scope tight; you may recreate a simplified version of the original system.
+
+**What’s inside:**
+- **Problem statement & examples:** screenshots/figures of the original interface and the specific flaw.  
+- **Evidence-based rationale:** usability principles and literature; community reports/threads; cognitive load considerations.  
+- **Redesign proposal & mockups:** interaction changes and why they address the flaw.  
+- **Working prototype link:** preferred public link to an interactive demo; fallback video if needed.
+
+**How it connects to this repo:**  
+This PDF summarizes the Medium-subtitle redesign delivered here—live, pixel-accurate preview + AI “Suggest & Explain” (Tighten, Concise, Detail)—and points to the runnable prototype and demo assets:
+- **Figma Demo:** https://www.figma.com/design/00fEInYY0d3geOVDO5EZn2/Medium?node-id=0-1&t=6dS9KJIX3XaZiv9c-1  
+- **Repo (this project):** https://github.com/growingpenguin/hci_redesign_project.git  
+- **Demo Video:** `HCI_Redesign_Demo.mov`
+
+**Grading rubric (for reference):**
+- Identified Design Flaw or Opportunity — **20%**  
+- Evidence / Analysis — **20%**  
+- Proposed Intervention — **20%**  
+- Working Implementation — **40%**  
 
 
 
